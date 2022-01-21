@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     $error = [];
     if($email == '') {
         //error empty email field
-        $error['email'] = 'Voer een gebruikersnaam in';
+        $error['email'] = 'Voer een ge1bruikersnaam in';
     }
     if($password == '') {
         //error empty password field

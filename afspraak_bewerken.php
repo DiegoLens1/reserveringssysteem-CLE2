@@ -19,7 +19,7 @@ if(!isset($_GET['id']) || $_GET['id'] == '') {
 require_once"includes/database.php";
 
 //stores the id from the GET in a variable
-$appointmentId = $_GET['id'];
+$appointmentId = mysqli_escape_string($db, $_GET['id']);
 
 //creates and executes a query to retrieve appointment data
 $query = "SELECT *, afspraken.id AS afspraken_id FROM afspraken INNER JOIN users ON afspraken.user_id = users.id WHERE afspraken.id = $appointmentId";

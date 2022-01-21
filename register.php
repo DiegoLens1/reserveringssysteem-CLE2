@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
     //stores name, email and password in variables
     $name = mysqli_escape_string($db, $_POST['naam']);
     $email = mysqli_escape_string($db, $_POST['email']);
-    $password = $_POST['password'];
+    $password = mysqli_escape_string($db, $_POST['password']);
 
     $error = [];
     if($name == '') {
