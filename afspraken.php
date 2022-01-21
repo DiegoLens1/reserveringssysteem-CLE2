@@ -72,7 +72,6 @@ mysqli_close($db);
             <div class="calendarWrapper">
                 Calendar
                 <div class="calendarFrame">
-                    <?= print_r($_SESSION) ?>
                 </div>
             </div>
         </main>

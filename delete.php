@@ -21,9 +21,8 @@ require_once"includes/database.php";
 //stores the id from the GET in a variable
 $appointmentId = mysqli_escape_string($db, $_GET['id']);
 
-
 //creates and executes a query that retrieves appointment data drom the database
-$query = "SELECT * FROM afspraken WHERE id = '$appointmentId'";
+$query = "SELECT *, afspraken.id AS afspraken_id FROM afspraken INNER JOIN users ON afspraken.user_id = users.id WHERE afspraken.id = '$appointmentId'";
 $result = mysqli_query($db, $query) or die('Error: '.mysqli_error($db). ' with query '. $query);
 
 //if the amount of results does not equal 1 send the user back to the appointment overview page

@@ -19,9 +19,10 @@ if(!isset($_GET['id']) || $_GET['id'] == '') {
 require_once"includes/database.php";
 
 //stores the id from the GET in a variable
-$afspraakId = $_GET['id'];
+$appointmentId = $_GET['id'];
+
 //creates and executes a query to retrieve appointment data
-$query = "SELECT *, afspraken.id AS afspraken_id FROM afspraken INNER JOIN users ON afspraken.user_id = users.id WHERE afspraken.id = $afspraakId";
+$query = "SELECT *, afspraken.id AS afspraken_id FROM afspraken INNER JOIN users ON afspraken.user_id = users.id WHERE afspraken.id = $appointmentId";
 $result = mysqli_query($db, $query) or die('Error: '.mysqli_error($db). ' with query '. $query);
 
 //if amount of results is not equal to 1 send user back to appointment overview page
@@ -51,7 +52,7 @@ if(isset($_POST['submit'])) {
     //checks if there are any errors up to this point
     if(empty($error)) {
         //creates and executes a query that updates and appointment in the database
-        $query = "UPDATE afspraken INNER JOIN users ON afspraken.user_id = users.id SET naam = '$name', locatie = '$location', datumtijd = '$datetime' WHERE afspraken.id = '$afspraakId'";
+        $query = "UPDATE afspraken INNER JOIN users ON afspraken.user_id = users.id SET naam = '$name', locatie = '$location', datumtijd = '$datetime' WHERE afspraken.id = '$appointmentId'";
         $result = mysqli_query($db, $query) or die('Error: '.mysqli_error($db). ' with query '. $query);
 
         //if the query executed successfully send the user back to the appointment overview page
@@ -121,7 +122,7 @@ if(isset($_POST['submit'])) {
                 <div class="input-submit">
                     <input class="button" type="submit" name="submit" value="Afspraak bewerken">
                 </div>
-                <a class="delete" href="delete.php?id=<?= $afspraakId ?>">Afspraak verwijderen</a>
+                <a class="delete" href="delete.php?id=<?= $appointmentId ?>">Afspraak verwijderen</a>
             </form>
         </div>
     </main>
