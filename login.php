@@ -16,7 +16,7 @@ require_once "includes/database.php";
 if (isset($_POST['submit'])) {
     //store email and password in variables
     $email = mysqli_escape_string($db, $_POST['email']);
-    $password = $_POST['password'];
+    $password = mysqli_escape_string($db ,$_POST['password']);
 
     $error = [];
     if($email == '') {
