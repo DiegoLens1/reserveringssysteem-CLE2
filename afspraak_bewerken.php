@@ -52,7 +52,9 @@ if(isset($_POST['submit'])) {
     //checks if there are any errors up to this point
     if(empty($error)) {
         //creates and executes a query that updates and appointment in the database
-        $query = "UPDATE afspraken INNER JOIN users ON afspraken.user_id = users.id SET naam = '$name', locatie = '$location', datumtijd = '$datetime' WHERE afspraken.id = '$appointmentId'";
+        $query = "UPDATE afspraken INNER JOIN users ON afspraken.user_id = users.id 
+                SET naam = '$name', locatie = '$location', datumtijd = '$datetime' 
+                WHERE afspraken.id = '$appointmentId'";
         $result = mysqli_query($db, $query) or die('Error: '.mysqli_error($db). ' with query '. $query);
 
         //if the query executed successfully send the user back to the appointment overview page
