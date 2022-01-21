@@ -1,0 +1,274 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    color: red;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    background-color: #fbfaf5;
+}
+
+.header a {
+    margin: 0 12px 0 12px;
+}
+
+.header nav a {
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 2px;
+    color: black;
+    text-align: center;
+    font-size: 24px;
+}
+
+.header nav a:hover {
+    background-color: #153b63;
+    color: #fbfaf5;
+}
+
+.header .profile a {
+    text-decoration: none;
+    border-radius: 2px;
+    color: black;
+    text-align: center;
+    font-size: 24px;
+}
+
+.header .profile a:hover {
+    background-color: #153b63;
+    color: #fbfaf5;
+}
+
+.header a img {
+    height: 145px;
+    border-radius: 2px;
+}
+
+.header nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.header .flex-grow {
+    flex-grow: 1;
+}
+
+.header .profile a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .profile img {
+    height: 40px;
+    border-radius: 50%;
+    margin:5px;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    background: linear-gradient(
+            rgba(212,19,103,.5),
+            rgba(212,19,103,.5)
+    ), url("../img/menu-visual.jpg");
+    background-size: cover;
+    height: 85%;
+}
+
+.makeAppointmentMain, .editAppointmentMain, .loginMain, .homeMain {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main .formWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fbfaf5;
+    border: solid 2px;
+    border-radius: 15px;
+    height: 70%;
+    width: 30%;
+}
+
+main .homeWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #fbfaf5;
+    border: solid 2px;
+    border-radius: 15px;
+    height: 70%;
+    width: 30%;
+}
+
+.formWrapper form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 80%;
+}
+
+.input-field input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-submit {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-submit p {
+    margin: 0;
+}
+
+.appointments, .calendarWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.appointments {
+    width: 40%;
+}
+
+.appointmentList {
+    display: flex;
+    justify-content: flex-start;
+    height: 85%;
+    width:70%;
+    background-color: #fbfaf5;
+    border: solid 2px;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.appointmentItem {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    border-bottom: solid;
+    font-size: 24px;
+    background-color: #fbfaf5;
+}
+
+.appointmentItem:link, .appointmentItem:hover, .appointmentItem:focus, .appointmentItem:active, .appointmentItem:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.appointmentItem:hover div{
+    background-color: #153b63;
+    color: #fbfaf5;
+}
+
+.appointmentId {
+    display: none;
+}
+
+.appointmentItem * {
+    width: 50%;
+    padding: 10px 0 10px 0;
+    color: black;
+}
+
+.calendarWrapper {
+    display: flex;
+    width: 60%;
+}
+
+.calendarFrame {
+    display: flex;
+    height: 85%;
+    width: 80%;
+    background-color: #fbfaf5;
+    border: solid 2px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #153b63;
+    color: #fbfaf5;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.delete {
+    display: inline-block;
+    background-color: #c40038;
+    color: #fbfaf5;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.deleteWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 80%;
+    height: 80%;
+    flex-wrap: wrap;
+    font-size: 25px;
+}
+
+.deleteWrapper :first-child {
+    width: 80%;
+    text-align: center;
+}
+
+.deleteWrapper *:not(:first-child, :last-child){
+    width: 50%;
+}
