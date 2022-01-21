@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedInUser']) || $_SESSION['loggedInUser']['admin'] != 1
 require_once('includes/database.php');
 
 //create and execute query retrieve appointments from database
-$query ="SELECT * FROM afspraken";
+$query ="SELECT *, afspraken.id AS afspraken_id FROM afspraken INNER JOIN users ON afspraken.user_id = users.id";
 $result = mysqli_query($db, $query) or die ('Error' . $query);
 
 //put results from query in array
@@ -59,8 +59,8 @@ mysqli_close($db);
                 <div>Eerstvolgenden afspraken</div>
                 <div class="appointmentList">
                     <?php foreach ($appointments as $appointment){ ?>
-                    <a href="afspraak_bewerken.php?id=<?= $appointment['id'] ?>" class="appointmentItem">
-                        <div class="appointmentId"><?= $appointment['id'] ?></div>
+                    <a href="afspraak_bewerken.php?id=<?= $appointment['afspraken_id'] ?>" class="appointmentItem">
+                        <div class="appointmentId"><?= $appointment['afspraken_id'] ?></div>
                         <div class="appointmentName"><?= $appointment['naam'] ?></div>
                         <div class="appointmentLocation"><?= $appointment['locatie'] ?></div>
                         <div class="appointmentDate"><?= date('d-m-Y', strtotime($appointment['datumtijd'])) ?></div>
@@ -72,6 +72,7 @@ mysqli_close($db);
             <div class="calendarWrapper">
                 Calendar
                 <div class="calendarFrame">
+                    <?= print_r($_SESSION) ?>
                 </div>
             </div>
         </main>
